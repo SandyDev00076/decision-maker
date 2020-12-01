@@ -1,5 +1,5 @@
 <template>
-  <form v-on:submit.prevent="addOption()" class="container">
+  <form v-on:submit.prevent="addOptionToState()" class="container">
     <input
       v-model="option"
       placeholder="Enter your Option"
@@ -10,22 +10,23 @@
 </template>
 <script lang="ts">
 import { ref } from "vue";
+import useOptions from "../hooks/useOptions";
 export default {
   name: "Inputs",
   setup() {
     const option = ref("");
     const options = ref<string[]>([]);
+    const { addOption } = useOptions();
 
-    function addOption() {
-      if (option.value) options.value.push(option.value);
+    function addOptionToState() {
+      addOption(option.value);
       option.value = "";
-      console.log(options.value);
     }
 
     return {
       option,
       options,
-      addOption
+      addOptionToState
     };
   }
 };
@@ -57,6 +58,7 @@ export default {
   color: #e8eaf6;
   border-radius: 10px;
   transition: background-color 0.5s;
+  font-size: 20px;
 
   &:hover {
     background-color: #3949ab;
