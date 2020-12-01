@@ -1,22 +1,30 @@
-import { reactive, toRefs } from "vue"
+import { reactive, toRefs } from "vue";
 
 type OptionsState = {
-    options: string[]
-}
+  options: string[];
+};
 
 const optionState = reactive<OptionsState>({
-    options: []
+  options: []
 });
 
 const useOptions = () => {
-    function addOption(option: string) {
-        optionState.options = [...optionState.options, option];
-    }
+  function addOption(option: string) {
+    optionState.options = [...optionState.options, option];
+  }
 
-    return {
-        ...toRefs(optionState),
-        addOption
-    }
-}
+  function removeOption(option: string) {
+    const tempOptions = [...optionState.options];
+    const itemToDel = tempOptions.findIndex(o => o === option);
+    if (itemToDel > -1) tempOptions.splice(itemToDel, 1);
+    optionState.options = [...tempOptions];
+  }
+
+  return {
+    ...toRefs(optionState),
+    addOption,
+    removeOption
+  };
+};
 
 export default useOptions;

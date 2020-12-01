@@ -33,7 +33,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .container {
-  background-color: #5c6bc0;
+  background-color: #e8eaf6;
   padding: 16px;
   display: flex;
   justify-content: center;
@@ -46,6 +46,7 @@ export default {
   border-radius: 10px;
   min-width: 50%;
   margin-right: 16px;
+  box-shadow: 0 0 10px #5c6bc0;
 }
 
 .addOption {
