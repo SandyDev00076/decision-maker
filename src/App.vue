@@ -2,19 +2,22 @@
   <div class="app">
     <Inputs />
     <OptionsGrid />
+    <Chooser />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import Inputs from "./components/Inputs.vue";
-import OptionsGrid from "./components/OptionsGrid.vue";
+import Inputs from "@/components/Inputs.vue";
+import OptionsGrid from "@/components/OptionsGrid.vue";
+import Chooser from "@/components/Chooser.vue";
 
 export default defineComponent({
   name: "App",
   components: {
     Inputs,
-    OptionsGrid
+    OptionsGrid,
+    Chooser
   }
 });
 </script>

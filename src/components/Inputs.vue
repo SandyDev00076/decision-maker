@@ -46,7 +46,7 @@ export default {
   border-radius: 10px;
   min-width: 50%;
   margin-right: 16px;
-  box-shadow: 0 0 10px #5c6bc0;
+  box-shadow: 0 0 5px #5c6bc0;
 }
 
 .addOption {
@@ -63,6 +63,7 @@ export default {
 
   &:hover {
     background-color: #3949ab;
+    color: white;
   }
 }
 </style>

@@ -13,6 +13,7 @@
 </template>
 <script lang="ts">
 import useOptions from "@/hooks/useOptions";
+import "@/styles/globals.scss";
 export default {
   name: "OptionsGrid",
   setup() {
@@ -28,13 +29,6 @@ export default {
 .container {
   background-color: #f3e5f5;
   padding: 16px;
-}
-.sectionHeader {
-  margin: 0 0 16px 0;
-  font-size: 25px;
-  text-transform: uppercase;
-  color: #4a148c;
-  font-weight: bold;
 }
 
 .options {
